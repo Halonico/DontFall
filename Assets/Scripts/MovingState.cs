@@ -9,6 +9,10 @@ public class MovingState : State
     private Vector3 firstPos, secondPos,destinationPos;
     public MovingState(Platform platform) : base(platform)
     {}
+    /*
+     * This method setup the left and right position of the platform
+     * It also increment the speed of the platform
+     */
     public override void Start()
     {
         firstPos = new Vector3(base.getPlatform().transform.position.x, 0, -5);
@@ -16,6 +20,9 @@ public class MovingState : State
         speed += 0.01f;
         destinationPos = firstPos;
     }
+    /*
+     * This method move the platform from left to right
+     */
     public override void Update()
     {
         if (getPlatform().transform.position == firstPos)
@@ -28,6 +35,9 @@ public class MovingState : State
         }
        getPlatform().transform.position= Vector3.MoveTowards(base.getPlatform().transform.position, destinationPos, speed);
     }
+    /*
+     * This method change the state of the platform
+     */
     public override State nextState()
     {
         return new IdleState(this.getPlatform());

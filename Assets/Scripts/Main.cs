@@ -15,6 +15,9 @@ public class Main : MonoBehaviour {
     private int count;
     public Text scoreUI;
     private Color nextColor;
+    /*This method setup everything for the game
+     * It creates 2 platorm and set the position of each one and the speed
+     * */
 	void Start () {
         xPosition = 0;
         count = 0;
@@ -27,6 +30,8 @@ public class Main : MonoBehaviour {
         platformList.Add((GameObject)Instantiate(Resources.Load("Platform"),new Vector3(xPosition, 0f,0f), Quaternion.identity));
         nextColor = UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
     }
+    /*This method check if the player fall and check if the user touch the screen
+     */
     void Update()
     {   
 

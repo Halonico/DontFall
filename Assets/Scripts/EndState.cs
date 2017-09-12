@@ -6,6 +6,7 @@ using UnityEngine;
 public class EndState : State
 {
     Vector3 destinationPos;
+    //This last state move the platform to the bottom and destroy it 
     public EndState(Platform platform) : base(platform)
     {
         destinationPos = new Vector3(base.getPlatform().transform.position.x, -20f, base.getPlatform().transform.position.z);

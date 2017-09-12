@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Loader : MonoBehaviour
 {
+    //This script load the game when the user press the start button
     public void Play()
     {
         SceneManager.LoadScene("Main");
